@@ -139,6 +139,24 @@ public class RNRSAModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void decrypt64usingOAEPwithSHA(final String encodedMessage, final String privateKeyString, final Promise promise) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          RSA rsa = new RSA();
+          rsa.setPrivateKey(privateKeyString);
+          String message = rsa.decrypt64usingOAEP(encodedMessage);
+          promise.resolve(message);
+
+        } catch (Exception e) {
+          promise.reject("Error", e.getMessage());
+        }
+      }
+    });
+  }
+
+  @ReactMethod
   public void sign(final String message, final String privateKeyString, final Promise promise) {
     AsyncTask.execute(new Runnable() {
       @Override

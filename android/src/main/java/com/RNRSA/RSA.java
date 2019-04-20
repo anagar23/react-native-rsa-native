@@ -138,9 +138,9 @@ public class RSA {
         return Base64.encodeToString(cipherBytes, Base64.DEFAULT);
     }
 
-    private byte[] decrypt(byte[] cipherBytes) throws NoSuchAlgorithmException, InvalidKeySpecException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
+    private byte[] decrypt(byte[] cipherBytes, String algorithm) throws NoSuchAlgorithmException, InvalidKeySpecException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
         String message = null;
-        final Cipher cipher = Cipher.getInstance("RSA/NONE/PKCS1Padding");
+        final Cipher cipher = Cipher.getInstance(algorithm);
         cipher.init(Cipher.DECRYPT_MODE, this.privateKey);
         byte[] data = cipher.doFinal(cipherBytes);
         return data;
@@ -149,14 +149,21 @@ public class RSA {
     // UTF-8 input
     public String decrypt(String message) throws NoSuchAlgorithmException, InvalidKeySpecException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
         byte[] cipherBytes = Base64.decode(message, Base64.DEFAULT);
-        byte[] data = decrypt(cipherBytes);
+        byte[] data = decrypt(cipherBytes, "RSA/NONE/PKCS1Padding");
         return new String(data, CharsetUTF_8);
     }
 
     // Base64 input
     public String decrypt64(String b64message) throws NoSuchAlgorithmException, InvalidKeySpecException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
         byte[] cipherBytes = Base64.decode(b64message, Base64.DEFAULT);
-        byte[] data = decrypt(cipherBytes);
+        byte[] data = decrypt(cipherBytes, "RSA/NONE/PKCS1Padding");
+        return Base64.encodeToString(data, Base64.DEFAULT);
+    }
+
+    // Base64 input
+    public String decrypt64usingOAEP(String b64message) throws NoSuchAlgorithmException, InvalidKeySpecException, IllegalBlockSizeException, BadPaddingException, NoSuchPaddingException, InvalidKeyException {
+        byte[] cipherBytes = Base64.decode(b64message, Base64.DEFAULT);
+        byte[] data = decrypt(cipherBytes, "RSA/NONE/OAEPwithSHA-1andMGF1Padding");
         return Base64.encodeToString(data, Base64.DEFAULT);
     }
 
@@ -262,7 +269,7 @@ public class RSA {
         KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
         keyStore.load(null);
         KeyStore.PrivateKeyEntry privateKeyEntry = (KeyStore.PrivateKeyEntry) keyStore.getEntry(this.keyTag, null);
-        
+
         if (privateKeyEntry != null) {
             this.privateKey = privateKeyEntry.getPrivateKey();
             this.publicKey = privateKeyEntry.getCertificate().getPublicKey();
