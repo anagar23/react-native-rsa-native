@@ -56,7 +56,7 @@ RCT_EXPORT_METHOD(decrypt:(NSString *)encodedMessage withKey:(NSString *)key res
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         RSANative *rsa = [[RSANative alloc] init];
         rsa.privateKey = key;
-        NSString *message = [rsa decrypt:encodedMessage];
+        NSString *message = [rsa decrypt:encodedMessage algorithm:kSecKeyAlgorithmRSAEncryptionPKCS1];
         resolve(message);
     });
 }
@@ -233,7 +233,7 @@ RCT_EXPORT_METHOD(decrypt:(NSString *)encodedMessage withKeyTag:(NSString *)keyT
                   rejecter:(RCTPromiseRejectBlock)reject) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         RSANative *rsa = [[RSANative alloc] initWithKeyTag:keyTag];
-        NSString *message = [rsa decrypt:encodedMessage];
+        NSString *message = [rsa decrypt:encodedMessage algorithm:kSecKeyAlgorithmRSAEncryptionPKCS1];
         resolve(message);
     });
 }

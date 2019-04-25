@@ -22,12 +22,12 @@
 - (NSString *)encodedPrivateKey;
 
 - (NSString *)encrypt:(NSString *)message;
-- (NSString *)decrypt:(NSString *)encodedMessage;
 
 - (NSString *)encrypt64:(NSString *)message;
-- (NSString *)decrypt:(NSString*)message algorithm:(SecKeyAlgorithm)algorithm;
 
 - (NSData *)_encrypt:(NSData *)message;
+
+- (NSString *)decrypt:(NSString*)message algorithm:(SecKeyAlgorithm)algorithm;
 - (NSString *)decrypt64:(NSString*)message algorithm:(SecKeyAlgorithm)algorithm;
 
 - (NSString *)sign:(NSString *)message withAlgorithm:(NSString *)algorithm withEncodeOption: (NSDataBase64EncodingOptions)encodeOption;
