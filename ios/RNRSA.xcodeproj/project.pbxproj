@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		143C67C052A62187E1EA3A1C /* libPods-RNRSA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F644D500AA82D40E25A55B /* libPods-RNRSA.a */; };
 		186F49E31F06836A00F71861 /* RSAFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F49E21F06836A00F71861 /* RSAFormatter.m */; };
 		BF40FFDB1F05EC9000DC4E95 /* RNRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = BF40FFD71F05EC9000DC4E95 /* RNRSA.m */; };
 		BF40FFDC1F05EC9000DC4E95 /* RSANative.m in Sources */ = {isa = PBXBuildFile; fileRef = BF40FFDA1F05EC9000DC4E95 /* RSANative.m */; };
@@ -31,11 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		015C46547C2DCC4760CA3106 /* Pods-RNRSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNRSA.debug.xcconfig"; path = "Target Support Files/Pods-RNRSA/Pods-RNRSA.debug.xcconfig"; sourceTree = "<group>"; };
 		186F49E11F06836A00F71861 /* RSAFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAFormatter.h; sourceTree = "<group>"; };
 		186F49E21F06836A00F71861 /* RSAFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAFormatter.m; sourceTree = "<group>"; };
-		2A2B389E826F99EEAB8B16D7 /* Pods-RNRSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNRSA.release.xcconfig"; path = "Target Support Files/Pods-RNRSA/Pods-RNRSA.release.xcconfig"; sourceTree = "<group>"; };
-		53F644D500AA82D40E25A55B /* libPods-RNRSA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNRSA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF40FFBD1F05EC4000DC4E95 /* libRNRSA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNRSA.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF40FFD71F05EC9000DC4E95 /* RNRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNRSA.m; sourceTree = "<group>"; };
 		BF40FFD81F05EC9000DC4E95 /* RNRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNRSA.h; sourceTree = "<group>"; };
@@ -48,23 +44,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				143C67C052A62187E1EA3A1C /* libPods-RNRSA.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		75D4F32FAEF7A985A810A78B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				015C46547C2DCC4760CA3106 /* Pods-RNRSA.debug.xcconfig */,
-				2A2B389E826F99EEAB8B16D7 /* Pods-RNRSA.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		BF40FFB41F05EC4000DC4E95 = {
 			isa = PBXGroup;
 			children = (
@@ -75,8 +60,6 @@
 				BF40FFD91F05EC9000DC4E95 /* RSANative.h */,
 				BF40FFDA1F05EC9000DC4E95 /* RSANative.m */,
 				BF40FFBE1F05EC4000DC4E95 /* Products */,
-				75D4F32FAEF7A985A810A78B /* Pods */,
-				E89B661FFA969E8487AA65D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,14 +71,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E89B661FFA969E8487AA65D0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				53F644D500AA82D40E25A55B /* libPods-RNRSA.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,7 +78,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF40FFC61F05EC4000DC4E95 /* Build configuration list for PBXNativeTarget "RNRSA" */;
 			buildPhases = (
-				F36F10E9C72F0940FB9C3AB3 /* [CP] Check Pods Manifest.lock */,
 				BF40FFB91F05EC4000DC4E95 /* Sources */,
 				BF40FFBA1F05EC4000DC4E95 /* Frameworks */,
 				BF40FFBB1F05EC4000DC4E95 /* Copy Headers */,
@@ -148,31 +122,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F36F10E9C72F0940FB9C3AB3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNRSA-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF40FFB91F05EC4000DC4E95 /* Sources */ = {
@@ -298,7 +247,6 @@
 		};
 		BF40FFC71F05EC4000DC4E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 015C46547C2DCC4760CA3106 /* Pods-RNRSA.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -309,7 +257,6 @@
 		};
 		BF40FFC81F05EC4000DC4E95 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A2B389E826F99EEAB8B16D7 /* Pods-RNRSA.release.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
